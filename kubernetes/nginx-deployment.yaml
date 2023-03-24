@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+spec:
+  selector:
+    matchLabels:
+      app: web
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: form-myapp1-0-v6wrm
+        image: itsmide/form-myapp1.0:tagname
+        ports:
+        - containerPort: 80
