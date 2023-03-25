@@ -26,7 +26,7 @@ pipeline {
                     dir('terraform') {
                         withCredentials([file(credentialsId: 'gcp-service-account', variable: 'GOOGLE_CREDENTIALS')]) {
                             sh '/var/lib/jenkins/google-cloud-sdk/bin/gcloud auth activate-service-account --key-file=$GOOGLE_CREDENTIALS'
-                            sh '/var/lib/jenkins/google-cloud-sdk/bin/gcloud auth application-default login --key-file=$GOOGLE_CREDENTIALS'
+                            sh '/var/lib/jenkins/google-cloud-sdk/bin/gcloud auth application-default login'
                             sh "terraform init"
                             sh "terraform apply -auto-approve"
                         }
