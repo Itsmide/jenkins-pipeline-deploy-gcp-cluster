@@ -9,7 +9,7 @@ pipeline {
         TOKEN = "/var/lib/jenkins/google-cloud-sdk/bin/.kube/gke_gcloud_auth_plugin_cache"
     }
     stages {
-        stage('Install Google Cloud SDK') {
+        /*stage('Install Google Cloud SDK') {
             steps {
                 //sh 'curl https://sdk.cloud.google.com | bash'
                 //sh 'exec -l $SHELL'
@@ -19,7 +19,7 @@ pipeline {
                 //sh 'source ~/google-cloud-sdk/completion.bash.inc'
                 //sh 'source ~/google-cloud-sdk/path.bash.inc'
             }
-        }
+        }*/
         stage("Create a GCP Cluster") {
             steps {
                 script {
