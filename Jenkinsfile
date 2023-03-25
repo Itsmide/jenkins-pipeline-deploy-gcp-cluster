@@ -11,10 +11,10 @@ pipeline {
     stages {
         stage('Install Google Cloud SDK') {
             steps {
-                sh 'curl https://sdk.cloud.google.com | bash'
+                /*sh 'curl https://sdk.cloud.google.com | bash'
                 sh 'exec -l $SHELL'
                 sh 'gcloud config set disable_usage_reporting false'
-                sh 'gcloud init'
+                sh 'gcloud init'*/
                 sh 'echo -e "# Source Google Cloud SDK bash completion\nif [ -f /var/lib/jenkins/google-cloud-sdk/completion.bash.inc ]; then\n  source /var/lib/jenkins/google-cloud-sdk/completion.bash.inc\nfi\n \n# Add Google Cloud SDK tools to $PATH\nif [ -d /var/lib/jenkins/google-cloud-sdk/bin ]; then\n  export PATH=$PATH:/var/lib/jenkins/google-cloud-sdk/bin\nfi" >> ~/.bashrc'
                 sh 'source ~/google-cloud-sdk/completion.bash.inc'
                 sh 'source ~/google-cloud-sdk/path.bash.inc'
