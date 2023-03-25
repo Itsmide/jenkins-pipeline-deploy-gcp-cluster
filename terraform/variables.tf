@@ -8,7 +8,7 @@ variable "cluster_name" {
 }
 variable "env_name" {
   description = "The environment for the GKE cluster"
-  default     = "live"
+  default     = "prod"
 }
 variable "region" {
   description = "The region to host the cluster in"
